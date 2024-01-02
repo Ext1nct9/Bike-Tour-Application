@@ -1,0 +1,40 @@
+.customContainer {
+	-fx-background-color: #DDDDDD;
+	-fx-background-radius: 5px;
+	-fx-border-color: #202020;
+	-fx-border-radius: 5px;
+	-fx-border-width: 1px;
+}
+
+.customTransparent {
+	-fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+   -fx-background-color: transparent;
+}
+
+.button {
+	-fx-background-color: #BBBBBB;
+}
+
+.button:hover {
+	-fx-background-color: #AAAAAA;
+}
+
+.button:pressed {
+	-fx-background-color: #808080;
+}
+
+.customTab {
+	-fx-background-color: #CCCCCC;
+	-fx-border-color: #DDDDDD;
+}
+
+.customTab:hover {
+	-fx-background-color: #AAAAAA;
+}
+
+.customTab:pressed {
+	-fx-background-color: #808080;
+}

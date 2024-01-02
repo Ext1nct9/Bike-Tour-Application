@@ -1,0 +1,75 @@
+class Participant {
+
+  // the following state machine does not include transitions that throw exceptions 
+  // to indicate to the caller that the transition is not possible - these
+  // transitions should be added with appropriate exception messages
+
+  status {
+    NotAssigned {
+      assign(BikeTour bikeTour) / {
+        doAssign(bikeTour);
+      } -> Assigned;
+      cancel() -> Cancelled;
+    }
+    Assigned {
+      pay(String authorizationCode) [isAuthorizationCodeValid(authorizationCode)] / {
+        doPay(authorizationCode); 
+      } -> Paid;
+      startTrip(int week) [hasMatchingStartWeek(week)] -> Banned;
+      cancel() -> Cancelled;
+    }
+    Paid {
+      startTrip(int week) [hasMatchingStartWeek(week)] -> Started;
+      cancel() / { doRefund(50); } -> Cancelled;
+    }
+    Started {
+      // when finishing a trip, the refund could be set explicitly with doRefund(0)
+      finishTrip() -> Finished;
+      cancel() / { doRefund(10); } -> Cancelled;
+    }
+    Banned {
+      pay(String authorizationCode) [isAuthorizationCodeValid(authorizationCode)] / {
+        rejectPay(authorizationCode); 
+        } -> Banned;
+    }
+    Cancelled {}
+    Finished {}
+  }
+
+  private void doAssign(BikeTour bikeTour) {
+  	setBikeTour(bikeTour);
+  }
+  
+  // ADDED
+  private void rejectAssign(BikeTour bikeTour) {
+  	throw new RuntimeException("Cannot start tour because the participant is banned");
+  }
+
+  // an authorization code is valid as long as it is not empty or null
+  private boolean isAuthorizationCodeValid(String authorizationCode) {
+  	return (authorizationCode.trim().length() > 0 && authorizationCode != null);
+  }
+
+  private void doPay(String authorizationCode) {
+  	setStatus(Status.Paid);
+  	setAuthorizationCode(authorizationCode);
+  }
+  
+  // ADDED
+  private void rejectPay(String authorizationCode) {
+  	throw new RuntimeException("Cannot pay for tour because the participant is banned");
+  }
+
+  private boolean hasMatchingStartWeek(int week) {
+  	return (week >= getWeekAvailableFrom() && week <= getWeekAvailableUntil());
+  }
+
+  private void doRefund(int refundedPercentageAmount) {
+  	setRefundedPercentageAmount(refundedPercentageAmount);
+  }
+  
+  // ADDED
+  private void rejectRefund(int refundedPercentageAmount) {
+  	throw new RuntimeException("Cannot pay for tour because the participant is banned");
+  }
+}

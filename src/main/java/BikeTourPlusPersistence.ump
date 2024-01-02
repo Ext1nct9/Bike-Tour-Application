@@ -1,0 +1,53 @@
+class BikeTourPlus {
+  public void reinitialize() {
+    User.reinitializeUniqueEmail(this.getManager(), this.getGuides(), this.getParticipants());
+    BookableItem.reinitializeUniqueName(this.getGear(), this.getCombos());
+    Lodge.reinitializeUniqueName(this.getLodges());
+    BikeTour.reinitializeUniqueID(this.getBikeTours());
+  }
+}
+
+class User {
+  public static void reinitializeUniqueEmail(Manager admin, List<Guide> guides, List<Participant> participants) {
+    usersByEmail = new HashMap<String, User>();
+    if (admin != null) {
+      usersByEmail.put(admin.getEmail(), admin);
+    }
+    for (Guide guide : guides) {
+      usersByEmail.put(guide.getEmail(), guide);
+    }
+    for (Participant participant : participants) {
+      usersByEmail.put(participant.getEmail(), participant);
+    }
+  }
+}
+
+class BookableItem {
+  public static void reinitializeUniqueName(List<Gear> gear, List<Combo> combos) {
+    bookableitemsByName = new HashMap<String, BookableItem>();
+    for (Gear g : gear) {
+      bookableitemsByName.put(g.getName(), g);
+    }
+    for (Combo combo : combos) {
+      bookableitemsByName.put(combo.getName(), combo);
+    }
+  }
+}
+
+class Lodge {
+  public static void reinitializeUniqueName(List<Lodge> lodges) {
+    lodgesByName = new HashMap<String, Lodge>();
+    for (Lodge lodge : lodges) {
+      lodgesByName.put(lodge.getName(), lodge);
+    }
+  }
+} 
+
+class BikeTour {
+  public static void reinitializeUniqueID(List<BikeTour> bikeTours) {
+    biketoursById = new HashMap<Integer, BikeTour>();
+    for (BikeTour bikeTour : bikeTours) {
+      biketoursById.put(bikeTour.getId(), bikeTour);
+    }
+  }
+}

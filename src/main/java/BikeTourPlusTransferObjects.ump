@@ -1,0 +1,24 @@
+namespace ca.mcgill.ecse.biketourplus.controller;
+use BikeTourPlusAdditionalTransferObjects.ump;
+
+class TOBikeTour {
+  immutable;
+  Integer id;
+  Integer startWeek;
+  Integer endWeek;
+  guideEmail;
+  guideName;
+  Integer totalCostForGuide;
+  0..1 -> * TOParticipantCost participantCosts;
+}
+
+class TOParticipantCost {
+  immutable;
+  participantEmail;
+  participantName;
+  status;
+  Integer totalCostForBookableItems;
+  Integer totalCostForBikingTour;
+  authorizationCode;
+  Integer refundedPercentageAmount;
+}

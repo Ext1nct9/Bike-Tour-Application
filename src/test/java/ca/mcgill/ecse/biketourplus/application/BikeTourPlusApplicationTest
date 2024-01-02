@@ -1,0 +1,39 @@
+package ca.mcgill.ecse.biketourplus.application;
+
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+ import static org.junit.jupiter.api.Assertions.assertNotNull;
+ import static org.junit.jupiter.api.Assertions.assertThrows;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+
+ import java.io.File;
+ import java.sql.Date;
+ import java.time.LocalDate;
+
+ import org.junit.jupiter.api.BeforeAll;
+ import org.junit.jupiter.api.BeforeEach;
+ import org.junit.jupiter.api.Test;
+ import org.junit.jupiter.api.function.Executable;
+
+ import ca.mcgill.ecse.biketourplus.model.*;
+ import ca.mcgill.ecse.biketourplus.persistence.BikeTourPlusPersistence;
+
+ public class BikeTourPlusApplicationTest {
+
+   private static BikeTourPlus btp = BikeTourPlusApplication.getBikeTourPlus();
+
+   private static int tourID = 1;
+   private static String filename = "testdata.biketourplus";
+
+   
+
+   /**
+    * Tests failure case by making sure RuntimeException is thrown with the given error message.
+    *
+    * @param executable a method call that could throw an exception preceded by "() -> "
+    */
+   private static void assertFailure(Executable executable, String expectedError) {
+     var exception = assertThrows(RuntimeException.class, executable);
+     assertTrue(exception.getMessage().contains(expectedError));
+   }
+
+ }

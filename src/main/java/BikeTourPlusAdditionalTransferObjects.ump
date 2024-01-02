@@ -1,0 +1,83 @@
+class TOCombo {
+  immutable;
+  String nameCombo;
+  Integer discount;
+
+  @Override public String toString() {
+      return nameCombo + " | Discount: " + discount + " %";
+  }
+}
+
+class TOGear {
+  immutable;
+  String nameGear;
+  Integer weeklyPriceGear;
+
+  @Override public String  toString() {
+      return nameGear + " " + weeklyPriceGear + " $";
+  }
+}
+
+class TOBookedItem {
+  immutable;
+  String nameBI;
+  Integer quantityBI;
+  
+  @Override public String  toString() {
+  	return nameBI + " " + quantityBI;
+  }
+}
+
+class TOGearInCombo {
+  immutable;
+  String nameGear;
+  Integer quantity;
+  Integer weeklyPriceGear;
+
+  @Override public String  toString() {
+      return nameGear + " " + weeklyPriceGear + " $   x " + quantity;
+  }
+}
+
+class TOParticipantsInTour {
+	immutable;
+    int totalParticipants;
+    String participantEmail;
+    String participantUsername;
+    String emergencyContact;
+    String status;
+    String authCode;
+    Integer Discount;
+
+    @Override public String toString() {
+    return participantEmail;
+    }
+}
+
+class TOBikeTour {
+	immutable;
+    @Override public String toString() {
+      return ("ID " + Integer.toString(id) + " : weeks " + Integer.toString(startWeek) + " - " + Integer.toString(endWeek)); 
+    }
+}
+
+class TOParticipant {
+	immutable;
+  String participantEmail;
+
+  @Override public String  toString() {
+      return participantEmail;
+  }
+}
+
+
+class TOGuide {
+    String name;
+    String email;
+    String password;
+    String emergencyContact;
+    
+    @Override public String toString(){
+        return email;
+    }
+}

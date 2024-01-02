@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.biketourplus.javafx.fxml.Participants.controller_Participants">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0">
+         <children>
+            <GridPane layoutX="50.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="customContainer" stylesheets="@../ressources/styles.css">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="313.0" minWidth="78.71180725097656" prefWidth="98.62806701660156" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="360.8216094970703" minWidth="10.0" prefWidth="206.56719970703125" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="326.8216247558594" minWidth="110.7998046875" prefWidth="169.52288818359375" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="263.93280029296875" minWidth="72.5472412109375" prefWidth="200.97711181640625" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="360.0806884765625" minWidth="86.72308349609375" prefWidth="166.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="360.0806884765625" minWidth="86.72308349609375" prefWidth="210.512939453125" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints vgrow="ALWAYS" />
+               </rowConstraints>
+               <children>
+                  <Label text="Name:" GridPane.halignment="RIGHT" />
+                  <Label text="Password:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <Label text="Emergency Contact Info:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                  <TextField fx:id="addParticipantNameTextField" GridPane.columnIndex="1" />
+                  <TextField fx:id="ECITextField" prefHeight="25.0" prefWidth="104.0" GridPane.columnIndex="3" />
+                  <Button fx:id="clearRPSectionButton" mnemonicParsing="false" onAction="#ClearRPClicked" text="Clear" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="RPButton" mnemonicParsing="false" onAction="#RPButtonClicked" text="Register" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label layoutX="94.0" layoutY="144.0" text="Email:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Week Available From:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Week Available Until:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <TextField fx:id="EmailRPTextField1" layoutX="234.0" layoutY="66.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="PasswordRPTextField11" layoutX="234.0" layoutY="110.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox fx:id="LGRPCheckBox" mnemonicParsing="false" text="Lodge required" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="Number of Weeks Available:" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+                  <Spinner fx:id="WAFSpinner" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Spinner fx:id="WAUSpinner" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Spinner fx:id="NWSpinner" GridPane.columnIndex="5" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="50.0" layoutY="300.0" prefHeight="300.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="customContainer" stylesheets="@../ressources/styles.css">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="255.0" minWidth="138.0418701171875" prefWidth="139.46446228027344" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="229.15870666503906" minWidth="61.75718688964844" prefWidth="161.53553771972656" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="170.56719970703125" minWidth="57.0" prefWidth="63.80963134765625" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="237.59033203125" minWidth="54.7340087890625" prefWidth="133.07107543945312" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="400.5606689453125" minWidth="138.50631713867188" prefWidth="139.92892456054688" />
+                  <ColumnConstraints maxWidth="335.66778564453125" minWidth="4.0" prefWidth="95.52923583984375" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="357.92999267578125" minWidth="45.88134765625" prefWidth="147.97076416015625" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="357.92999267578125" minWidth="67.0379638671875" prefWidth="121.4415283203125" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="357.92999267578125" minWidth="26.912353515625" prefWidth="26.912353515625" />
+               </columnConstraints>
+               <children>
+                  <ChoiceBox fx:id="UPChoiceBox" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="1" />
+                  <Label text="Participant to update:" GridPane.halignment="RIGHT" />
+                  <Label text="Week Available Until:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Add gear" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <Label text="Add combo" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <Button fx:id="UPButton" mnemonicParsing="false" onAction="#UpdateParticipantClicked" text="Update Participant" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button fx:id="clearUPButton" mnemonicParsing="false" onAction="#clearUpdateParticipantClicked" text="Clear" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Label text="Week Available From:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+                  <Button fx:id="selectParticipantUpdateSectionButton" mnemonicParsing="false" onAction="#selectParticipantUpdateSection" text="Select" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <CheckBox fx:id="LGUPCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Label layoutX="56.0" layoutY="137.0" text="Lodge required" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                  <Button fx:id="AGUPButton" mnemonicParsing="false" onAction="#AddGearUPClicked" text="Add" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="ACUPButton" layoutX="747.0" layoutY="57.0" mnemonicParsing="false" onAction="#AddComboUPClicked" text="Add" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label text="Remove Item" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <Button fx:id="RGUPButton3" layoutX="747.0" layoutY="95.0" mnemonicParsing="false" onAction="#RemoveGearUPClicked" text="Remove" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="AGUPChoiceBox1" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="ACUPChoiceBox2" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="RGUPChoiceBox3" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                  <Label text="Name:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Email:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <TextField fx:id="NameUPTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="EmailUPTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Password:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <TextField fx:id="PasswordUPTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="ECIUPTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Emergency Contact Info:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <Label text="NrWeeks:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <Spinner fx:id="WAFUPSpinned" GridPane.columnIndex="4" />
+                  <Spinner fx:id="WAUUPSpinner" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Spinner fx:id="NWUPSpinner" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label fx:id="TripStatusLabel" minWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label text="Trip Status:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <TextField fx:id="PayTextField" GridPane.columnIndex="6" />
+                  <Button fx:id="PayButton" mnemonicParsing="false" onAction="#PayButtonClicked" text="Pay" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
+                  <Label text="Payment:" GridPane.columnIndex="5" GridPane.halignment="RIGHT" />
+                  <Button fx:id="CTButton" mnemonicParsing="false" onAction="#CTClicked" text="Cancel Trip" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="FTButton" mnemonicParsing="false" onAction="#FTClicked" text="Finish Trip" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               </children>
+               <rowConstraints>
+                  <RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                  <RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints vgrow="ALWAYS" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane layoutX="50.0" layoutY="700.0" prefHeight="75.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="customContainer" stylesheets="@../ressources/styles.css">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints />
+                  <ColumnConstraints hgrow="ALWAYS" />
+               </columnConstraints>
+               <children>
+                  <ChoiceBox fx:id="deleteParticipantChoiceBox" prefHeight="25.0" prefWidth="205.0" GridPane.columnIndex="1" />
+                  <Label text="Participant to delete:" GridPane.halignment="RIGHT" />
+                  <Button fx:id="deleteParticipantButton" mnemonicParsing="false" onAction="#deleteParticipantClicked" text="Delete Participant" GridPane.columnIndex="2" />
+               </children>
+               <rowConstraints>
+                  <RowConstraints maxHeight="82.20761108398438" minHeight="59.94683837890625" prefHeight="74.787353515625" vgrow="ALWAYS" />
+               </rowConstraints>
+            </GridPane>
+            <Label alignment="CENTER" layoutX="70.0" layoutY="65.0" minWidth="250.0" styleClass="customContainer" stylesheets="@../ressources/styles.css" text="Register Participant">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="70.0" layoutY="265.0" minWidth="250.0" styleClass="customContainer" stylesheets="@../ressources/styles.css" text="Update Participant">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="70.0" layoutY="665.0" minWidth="250.0" styleClass="customContainer" stylesheets="@../ressources/styles.css" text="Delete Participant">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
